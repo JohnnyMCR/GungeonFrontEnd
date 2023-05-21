@@ -11,6 +11,7 @@ export default function App() {
   return (
     <div className="App">
       <Router>
+        <header>
         <NavBar />
         <main>
           <Routes>
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
+        </header>
       </Router>
     </div>
   );

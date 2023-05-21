@@ -1,4 +1,4 @@
-import WeaponDetails from "../Components/SnackDetails";
+import WeaponDetails from "../Components/WeaponDetails";
 
 export default function Show() {
     return (
