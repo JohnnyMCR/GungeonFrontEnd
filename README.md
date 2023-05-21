@@ -15,6 +15,6 @@ Getting Started:
 - [Trello Board](https://trello.com/b/AeGrfYLy/gungeon-portfolio-project)
 
 ### GitHub Repos
-- [Group BackEnd repo](https://github.com/JohnnyMCR/GungeonBackend)
+- [BackEnd Repo](https://github.com/JohnnyMCR/GungeonBackend)
 
-- [Group FrontEnd repo](https://github.com/JohnnyMCR/GungeonFrontEnd)
+- [FrontEnd Repo](https://github.com/JohnnyMCR/GungeonFrontEnd)
