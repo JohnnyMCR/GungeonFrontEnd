@@ -16,7 +16,7 @@ function WeaponEditForm() {
         type: "",
         DPS: 0,
         class: "",
-        url: ""
+        img: ""
     });
 
     const updateWeapon = (updatedWeapon) => {
@@ -32,10 +32,17 @@ function WeaponEditForm() {
     };
 
 
+    // const handleTextChange = (event) => {
+    //     setWeapon({ ...weapon, [event.target.id]: event.target.value });
+    // };
     const handleTextChange = (event) => {
-        setWeapon({ ...weapon, [event.target.id]: event.target.value });
-    };
-
+        const { id, value } = event.target;
+        setWeapon((prevWeapon) => ({
+          ...prevWeapon,
+          [id]: value,
+        }));
+      };
+      
     useEffect(() => {
         axios.get(`${API}/weapons/${id}`).then(
             (response) => setWeapon(response.data),

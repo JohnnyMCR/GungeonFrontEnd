@@ -28,7 +28,7 @@ function WeaponNewForm() {
         type: "",
         DPS: 0,
         class: "",
-        url: ""
+        img: ""
     });
 
     const handleTextChange = (event) => {
@@ -61,7 +61,6 @@ function WeaponNewForm() {
                     value={weapon.notes}
                     onChange={handleTextChange}
                     placeholder="Notes"
-                    required
                 />
                 <br />
 
@@ -72,7 +71,6 @@ function WeaponNewForm() {
                     value={weapon.quote}
                     onChange={handleTextChange}
                     placeholder="Quote"
-                    required
                 />
                 <br />
 
@@ -147,3 +145,4 @@ function WeaponNewForm() {
 };
 
 export default WeaponNewForm;
+

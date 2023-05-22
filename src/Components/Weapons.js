@@ -3,64 +3,83 @@ import { useState, useEffect } from "react";
 const API = process.env.REACT_APP_API_URL;
 
 function Weapons() {
-  const [weapons, setWeapons] = useState([]);
-  const [originalWeapons, setOriginalWeapons] = useState([]);
+    const [weapons, setWeapons] = useState([]);
+    const [originalWeapons, setOriginalWeapons] = useState([]);
+    const [selectedType, setSelectedType] = useState("ShowAll");
+    const [dropdownOptions, setDropdownOptions] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`${API}/weapons`)
-      .then((response) => {
-        setWeapons(response.data);
-        setOriginalWeapons(response.data);
-      })
-      .catch((e) => console.warn("catch", e));
-  }, []);
+    useEffect(() => {
+        const fetchWeaponsData = async () => {
+            try {
+                const response = await axios.get(`${API}/weapons`);
+                const { data } = response;
+                setWeapons(data);
+                setOriginalWeapons(data);
 
-  const sortByType = (event) => {
-    if (event.value) {
-      const filteredWeapons = originalWeapons.filter(
-        (weapon) => weapon.type === event.value
-      );
-      setWeapons(filteredWeapons);
-    } else {
-      setWeapons(originalWeapons);
-    }
-  };
+                const uniqueTypes = [...new Set(data.map((weapon) => weapon.type))];
+                setDropdownOptions(uniqueTypes);
+            } catch (error) {
+                console.warn("Error", error);
+            }
+        };
+        fetchWeaponsData();
+    }, []);
 
-  return (
-    <div>
-      <section>
-        <div className="Sort">
-          <button onClick={() => sortByType("Quality")}>Sort by Quality</button>
-          <button onClick={() => sortByType()}>Sort by Type</button>
-          <button onClick={() => sortByType("Class")}>Sort by Class</button>
-          <button onClick={() => sortByType()}>Show all Weapons</button>
+    const handleTypeChange = (event) => {
+        setSelectedType(event.target.value);
+    };
+
+    useEffect(() => {
+        if (selectedType !== "ShowAll") {
+            const filteredWeapons = originalWeapons.filter(
+                (weapon) => weapon.type === selectedType
+            );
+            setWeapons(filteredWeapons);
+        } else {
+            setWeapons(originalWeapons);
+        }
+    }, [selectedType, originalWeapons]);
+
+    return (
+        <div className="weapons-container">
+            <div className="sort-dropdown">
+                <select value={selectedType} onChange={handleTypeChange}>
+                    <option value="ShowAll">Show all Weapons</option>
+                    {dropdownOptions.map((option) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            <div className="weapons-list">
+                <div className="table-container">
+                    <table className="center-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Quote</th>
+                                <th>Quality</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {weapons.map((weapon) => (
+                                <tr key={weapon.id}>
+                                    <td>
+                                        <img src={weapon.img} alt={weapon.name} />
+                                    </td>
+                                    <td>{weapon.name}</td>
+                                    <td>{weapon.quote}</td>
+                                    <td>{weapon.quality}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Quote</th>
-              <th>Quality</th>
-            </tr>
-          </thead>
-          <tbody>
-            {weapons.map((weapon) => (
-              <tr key={weapon.id}>
-                <td>
-                  <img src={weapon.img} alt={weapon.name} />
-                </td>
-                <td>{weapon.name}</td>
-                <td>{weapon.quote}</td>
-                <td>{weapon.quality}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-    </div>
-  );
+    );
 }
 
 export default Weapons;

@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
-
 export default function NavBar() {
     return (
         <nav>
-            <h1>
-                <Link to="/weapons">Welcome to the Breach</Link>
-            </h1>
-            <button>
-                <Link to="/weapons/new">Add A Weapon/Item</Link>
-            </button>
+            <div className="logo">
+                <a href="/weapons">Welcome to the Breach</a>
+            </div>
+            <div className="button-container">
+                <a href="/weapons/new" className="Add">Add A Weapon/Item</a>
+            </div>
         </nav>
     )
 };
