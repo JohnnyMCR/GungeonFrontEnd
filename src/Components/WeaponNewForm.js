@@ -32,7 +32,7 @@ function WeaponNewForm() {
     });
 
     const handleTextChange = (event) => {
-        setWeapon({ ...weapon, [event.target.id]: event.target.value });
+        setWeapon({ ...weapon, [event.target.name]: event.target.value });
     };
 
     const handleSubmit = (event) => {
@@ -46,6 +46,7 @@ function WeaponNewForm() {
                 <label htmlFor="name">Name:</label>
                 <input
                     id="name"
+                    name="name"
                     type="text"
                     value={weapon.name}
                     onChange={handleTextChange}
@@ -57,6 +58,7 @@ function WeaponNewForm() {
                 <label htmlFor="notes">Notes:</label>
                 <input
                     id="notes"
+                    name="notes"
                     type="text"
                     value={weapon.notes}
                     onChange={handleTextChange}
@@ -67,6 +69,7 @@ function WeaponNewForm() {
                 <label htmlFor="quote">Quote:</label>
                 <input
                     id="quote"
+                    name="quote"
                     type="text"
                     value={weapon.quote}
                     onChange={handleTextChange}
@@ -75,7 +78,12 @@ function WeaponNewForm() {
                 <br />
 
                 <label htmlFor="quality">Quality:</label>
-                <select id="quality" value={weapon.quality} onChange={handleTextChange}>
+                <select
+                    id="quality"
+                    name="quality"
+                    value={weapon.quality}
+                    onChange={handleTextChange}
+                >
                     <option value="">Select a Quality</option>
                     <option value="S">S</option>
                     <option value="A">A</option>
@@ -86,7 +94,12 @@ function WeaponNewForm() {
                 <br />
 
                 <label htmlFor="type">Type:</label>
-                <select id="type" value={weapon.type} onChange={handleTextChange}>
+                <select
+                    id="type"
+                    name="type"
+                    value={weapon.type}
+                    onChange={handleTextChange}
+                >
                     <option value="">Select a Weapon Type</option>
                     <option value="Automatic">Automatic</option>
                     <option value="Beam">Beam</option>
@@ -96,11 +109,12 @@ function WeaponNewForm() {
                     <option value="Varies">Varies</option>
                 </select>
 
-                <label htmlFor="dps">DPS:</label>
+                <label htmlFor="DPS">DPS:</label>
                 <input
-                    id="dps"
+                    id="DPS"
+                    name="DPS"
                     type="number"
-                    value={weapon.dps}
+                    value={weapon.DPS}
                     onChange={handleTextChange}
                     placeholder="DPS"
                     required
@@ -108,7 +122,12 @@ function WeaponNewForm() {
                 <br />
 
                 <label htmlFor="class">Class:</label>
-                <select id="class" value={weapon.class} onChange={handleTextChange}>
+                <select
+                    id="class"
+                    name="class"
+                    value={weapon.class}
+                    onChange={handleTextChange}
+                >
                     <option value="">Select a Class</option>
                     <option value="None">NONE</option>
                     <option value="Pistol">PISTOL</option>
@@ -131,6 +150,7 @@ function WeaponNewForm() {
                 <label htmlFor="img">Image:</label>
                 <input
                     id="img"
+                    name="img"
                     type="text"
                     value={weapon.img}
                     onChange={handleTextChange}
