@@ -14,7 +14,7 @@ function WeaponEditForm() {
         quote: "",
         quality: "",
         type: "",
-        DPS: 0,
+        dps: 0,
         class: "",
         img: ""
     });
@@ -119,7 +119,7 @@ function WeaponEditForm() {
                     type="number"
                     value={weapon.dps}
                     onChange={handleTextChange}
-                    placeholder="DPS"
+                    placeholder="dps"
                     required
                 />
                 <br />

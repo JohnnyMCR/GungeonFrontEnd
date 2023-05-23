@@ -26,7 +26,7 @@ function WeaponNewForm() {
         quote: "",
         quality: "",
         type: "",
-        DPS: 0,
+        dps: 0,
         class: "",
         img: ""
     });
@@ -109,14 +109,14 @@ function WeaponNewForm() {
                     <option value="Varies">Varies</option>
                 </select>
 
-                <label htmlFor="DPS">DPS:</label>
+                <label htmlFor="dps">DPS:</label>
                 <input
-                    id="DPS"
-                    name="DPS"
+                    id="dps"
+                    name="dps"
                     type="number"
-                    value={weapon.DPS}
+                    value={weapon.dps}
                     onChange={handleTextChange}
-                    placeholder="DPS"
+                    placeholder="dps"
                     required
                 />
                 <br />

@@ -37,7 +37,7 @@ export default function WeaponDetails() {
             <h4>Quote: {singleWeapon.quote}</h4>
             <h4>Quality: {singleWeapon.quality}</h4>
             <h4>Type: {singleWeapon.type}</h4>
-            <h4>DPS: {singleWeapon.dps}</h4>
+            <h4>dps: {singleWeapon.dps}</h4>
             <h4>Class: {singleWeapon.class}</h4>
             <img src={singleWeapon.img} alt={singleWeapon.name} />
 
