@@ -2,7 +2,7 @@
 
 - Johnny Castillo(https://github.com/JohnnyMCR)
 
-This web application is an Enter the Gungeon inspired weapons list App. It allows users to see the details of the weapon and their effect. Along with their class and tier, the user also sees how the weapons look in-game. The user can also add items/weapons with their specific data although an image will not populate. There are options to edit and delete the data if there are any issues.
+This web application is an Enter the Gungeon inspired weapons list App. It allows users to see the details of the pre-selected weapons and their effect. Along with their class and tier, the user also sees how the weapons look in-game. The user can also add items/weapons with their specific data although an image will not populate. There are options to edit and delete the data if there are any issues.
 
 Getting Started:
 - Clone the repository: git clone

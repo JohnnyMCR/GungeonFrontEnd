@@ -89,9 +89,9 @@ table {
   margin: auto;
   font-weight: bold;
   font-size: 21px;
-  font-family:initial;
+  /* font-family:initial; */
   color: #040504;
-  background-color: rgba(252, 251, 251, 0.377);
+  background-color: rgba(99, 96, 96, 0.377);
   box-shadow: 2px 2px 4px rgb(207, 45, 45);
 }
 

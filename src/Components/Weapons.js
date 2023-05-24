@@ -72,7 +72,7 @@ function Weapons() {
                     <img src={weapon.img} alt={weapon.name} />
                   </td>
                   <td>
-                    <Link to={`/weapons/${weapon.id}/edit`}>{weapon.name}</Link>
+                    <Link to={`/weapons/${weapon.id}`}>{weapon.name}</Link>
                   </td>
                   <td>{weapon.quote}</td>
                   <td>{weapon.quality}</td>
