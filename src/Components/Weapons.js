@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-function Weapons() {
+export default function Weapons() {
   const [weapons, setWeapons] = useState([]);
   const [originalWeapons, setOriginalWeapons] = useState([]);
   const [selectedType, setSelectedType] = useState("ShowAll");
@@ -85,5 +85,3 @@ function Weapons() {
     </div>
   );
 }
-
-export default Weapons;

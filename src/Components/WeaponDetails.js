@@ -44,20 +44,16 @@ export default function WeaponDetails() {
             <br />
 
             <div className="EditButton">
-                <Link to="/weapons">
-                    <div>
-                        <button>Back</button>
-                    </div>
-                </Link>
-
-                <br />
                 <Link to={`/weapons/${id}/edit`}>
                     <div>
                         <button>Edit</button>
                     </div>
                 </Link>
-
-                <br />
+                <Link to="/weapons">
+                    <div>
+                        <button>Back</button>
+                    </div>
+                </Link>
                 <div>
                     <button onClick={handleDelete}>Delete</button>
                 </div>

@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-function WeaponEditForm() {
+export default function WeaponEditForm() {
     let { id } = useParams();
     let navigate = useNavigate();
 
@@ -164,5 +164,3 @@ function WeaponEditForm() {
         </div>
     )
 }
-
-export default WeaponEditForm;
